@@ -87,7 +87,7 @@ namespace LinnworksCategoryApiTests
                     It.IsAny<CancellationToken>()))
                 .Returns(Task.FromResult(apiClientResponse));
 
-            var response = _sut.CreateCategory(createdCategory.CategoryName, It.IsAny<CancellationToken>());
+            var response = _sut.CreateCategory(createdCategory, It.IsAny<CancellationToken>());
 
             var result = response.Result as JsonResult;
 
@@ -135,7 +135,7 @@ namespace LinnworksCategoryApiTests
                     It.IsAny<CancellationToken>()))
                 .Returns(Task.FromResult(apiClientResponse));
 
-            var response = _sut.DeleteCategory(category.CategoryId, It.IsAny<CancellationToken>());
+            var response = _sut.DeleteCategory(category, It.IsAny<CancellationToken>());
 
             var result = response.Result as JsonResult;
 
